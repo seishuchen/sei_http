@@ -17,7 +17,7 @@ handle(Req, State) ->
     %io:format("#######ReqCmd:~p ~n",[ReqCmd]),
 	{ok, Req2} = cowboy_req:reply(200, [
 		{<<"content-type">>, <<"text/plain">>}
-	], <<"device!">>, Req),
+	], <<"hello,sei!">>, Req),
     io:format("##########Req2:~p ~n",[Req2]),
 	{ok, Req2, State}.
 
