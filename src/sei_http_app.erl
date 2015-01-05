@@ -21,6 +21,7 @@ start(_Type, _Args) ->
 	Dispatch = cowboy_router:compile([
 		{'_', [
 			{"/stat", sei_stat_handler, []},
+			{"/event", sei_event_handler, []},
 			{"/local", sei_local_handler, []},
 			{"/test", sei_test_handler, []}
 		]}
