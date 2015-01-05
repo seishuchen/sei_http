@@ -1,0 +1,15 @@
+*~
+.idea/
+sei_http.iml
+Makefile
+!*.erl
+!*.hrl
+*.beam
+.gitignore
+server.log
+.rebar/
+deps/
+ebin/
+logs/
+erl_crash.dump
+
