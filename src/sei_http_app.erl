@@ -7,7 +7,7 @@
 %% API.
 -export([start/0,start/2]).
 -export([stop/1]).
--compile([{parse_transform,lager_transform}]).
+%%-compile([{parse_transform,lager_transform}]).
 
 %% API.
 start() ->
@@ -15,13 +15,12 @@ start() ->
     application:start(ranch),
     application:start(cowlib),
     application:start(cowboy),
-    %%application:start(lager),
+    application:start(lager),
     application:start(sei_http).
 
 
 start(_Type, _Args) ->
-    %%lager:error("start http server!"),
-    %%lager:info("start http server!"),
+    error_logger:error_msg("start http server! ~n"),
 	Dispatch = cowboy_router:compile([
 		{'_', [
 			{"/stat", sei_stat_handler, []},

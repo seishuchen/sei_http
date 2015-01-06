@@ -10,6 +10,15 @@
 		stdlib,
 		cowboy
 	]},
+	{lager, [
+	  {handlers, [
+		{lager_console_backend, debug},
+		{lager_file_backend, [
+		  {"error.log", error, 10485760, "$D0", 5},
+		  {"console.log", info, 10485760, "$D0", 5}
+		]}
+	  ]}
+	]},
 	{mod, {sei_http_app, []}},
 	{env, []}
 ]}.
